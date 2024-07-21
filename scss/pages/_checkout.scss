@@ -1,0 +1,642 @@
+@use "../abstracts";
+
+.checkout-page {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+
+  &__breadcrumbs {
+    background: var(--checkout-breadcrumbs-bg);
+  }
+}
+
+.checkout-container {
+  margin-top: 30px;
+
+  @include abstracts.breakpoint(md) {
+    margin-top: 20px;
+  }
+}
+
+.cart-info + .cart-info {
+  margin-top: 30px;
+}
+
+.cart-info {
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--cart-info-bg);
+  box-shadow: 0 20px 60px 10px var(--cart-info-box-shadow);
+
+  @include abstracts.breakpoint(md) {
+    padding: 16px;
+  }
+
+  &__check-all {
+    margin: 30px 0;
+  }
+
+  &__form {
+    margin-bottom: 30px;
+  }
+
+  &__desc {
+    margin-top: 6px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 22px;
+
+    color: var(--text-color);
+  }
+
+  &__checkbox {
+    &-input {
+      margin-top: 5px;
+      appearance: none;
+
+      &::before {
+        content: url("../icons/checkbox-uncheck.svg");
+      }
+
+      &:not(:checked)::before {
+        filter: var(--icon-color);
+      }
+
+      &:checked::before {
+        content: url("../icons/checkbox-checked.svg");
+      }
+    }
+  }
+
+  &__edit-btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    filter: var(--icon-color);
+
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__back-arrow {
+    width: 50px;
+    padding-right: 20px;
+    position: relative;
+    top: 4px;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 34px;
+    color: var(--text-color);
+
+    &--lv2 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 32px;
+
+      @include abstracts.breakpoint(md) {
+        font-size: 1.6rem;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__sub-heading {
+    margin: 30px 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+
+    color: var(--text-color);
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__list {
+    margin-top: -30px;
+
+    @include abstracts.breakpoint(md) {
+      margin-top: -16px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30px;
+
+    &-btn {
+      @include abstracts.breakpoint(sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__row,
+  &__continue-link {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-color);
+
+    margin-top: 10px;
+
+    &--favourite {
+      @include abstracts.breakpoint(md) {
+        padding-top: 30px;
+        border-top: 1px solid #d2d1d6;
+      }
+  
+      @include abstracts.breakpoint(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    &--bold {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    &--no-margin {
+      margin-top: 0;
+    }
+  }
+
+  &__separate {
+    margin: 30px 0;
+    height: 1px;
+    background: #d2d1d6;
+  }
+
+  &__continue {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--text-color);
+    }
+
+    &-icon {
+      rotate: 90deg;
+      transition: translate 0.3s;
+    }
+
+    &-link:hover &-icon {
+      translate: -5px;
+    }
+  }
+
+  &__next-btn {
+    margin-top: 30px;
+  }
+}
+
+.cart-item {
+  display: flex;
+  gap: 30px;
+  padding: 30px 0;
+  border-bottom: 1px solid #d2d1d6;
+
+  @include abstracts.breakpoint(md) {
+    gap: 16px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @include abstracts.breakpoint(sm) {
+    gap: 10px;
+  }
+
+  &__thumb {
+    width: 172px;
+    height: 172px;
+    object-fit: contain;
+
+    @include abstracts.breakpoint(xxl) {
+      width: 150px;
+      height: 150px;
+    }
+
+    @include abstracts.breakpoint(lg) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @include abstracts.breakpoint(md) {
+      width: 90px;
+      height: 90px;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    align-self: flex-start;
+
+    &-left {
+      flex: 1;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+
+      @include abstracts.breakpoint(md) {
+        margin-top: 16px;
+      }
+    }
+
+    @include abstracts.breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    max-width: 374px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--text-color);
+  }
+
+  &__price-wrap {
+    margin: 16px 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: #9e9da8;
+  }
+
+  &__status {
+    color: #67b044;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
+    min-height: 44px;
+
+    @include abstracts.breakpoint(sm) {
+      gap: 12px;
+    }
+
+    &--md-block {
+      @include abstracts.breakpoint(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      @include abstracts.breakpoint(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 2px 20px;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid #d2d1d6;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--text-color);
+
+    &-btn {
+      display: flex;
+    }
+
+    &-icon {
+      filter: var(--icon-color);
+    }
+  }
+
+  &__total-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--text-color);
+    text-align: right;
+
+    @include abstracts.breakpoint(md) {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+  }
+
+  &__control-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include abstracts.breakpoint(md) {
+      gap: 7px;
+    }
+
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 24px;
+    color: #9e9da8;
+
+    &:first-child {
+      margin-left: 10px;
+
+      @include abstracts.breakpoint(md) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__checkout-btn {
+    margin-top: auto;
+    font-weight: 600;
+    max-width: 180px;
+
+    @include abstracts.breakpoint(sm) {
+      max-width: 150px;
+    }
+  }
+}
+
+.gift-item {
+  display: flex;
+  gap: 20px;
+
+  &__icon-wrap {
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    border-radius: 14px;
+    background: rgb(118, 68, 225, 0.1);
+    box-shadow: 0 20px 60px 10px var(--cart-info-box-shadow);
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--text-color);
+  }
+
+  &__desc {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text-color);
+  }
+}
+
+.user-address {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include abstracts.breakpoint(md) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--text-color);
+  }
+
+  &__desc {
+    margin-top: 4px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--text-color);
+  }
+
+  &__btn {
+    @include abstracts.breakpoint(md) {
+      height: 46px;
+    }
+  }
+
+  &__message {
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  &__link {
+    margin-left: 4px;
+    color: #0071dc;
+  }
+}
+
+.address-card {
+  display: flex;
+  margin-top: 30px;
+  gap: 16px;
+
+  @include abstracts.breakpoint(md) {
+    flex-direction: column;
+  }
+
+  &__left {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--text-color);
+  }
+
+  &__desc {
+    width: min(520px, 90%);
+    margin-top: 6px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--text-color);
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+
+    @include abstracts.breakpoint(sm) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    margin-top: 20px;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: disc inside;
+    color: var(--text-color);
+  }
+
+  &__control {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--text-color);
+
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--payment-item-bg);
+
+  @include abstracts.breakpoint(md) {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  &--pointer {
+    cursor: pointer;
+  }
+
+  &__right {
+    flex-grow: 1;
+    display: flex;
+    gap: 16px;
+
+    @include abstracts.breakpoint(sm) {
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__thumb {
+    width: 70px;
+    height: 54px;
+    object-fit: cover
+  }
+
+  &__desc,
+  &__detail {
+    margin-top: 4px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__detail {
+    margin-right: -8px;
+    padding: 8px;
+    color: #0071dc;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 14px;
+  }
+
+  &__checkbox-input:checked + &__cost {
+    color: var(--text-color);
+  }
+
+  &__cost { 
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: #9E9DA8;
+
+    @include abstracts.breakpoint(md) {
+      font-size: 1.6rem;
+    }
+  }
+}

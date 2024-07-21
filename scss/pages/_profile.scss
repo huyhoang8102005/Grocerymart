@@ -1,0 +1,96 @@
+.profile {
+  &-container {
+    margin: 30px 0;
+  }
+
+  &-desc {
+    margin-bottom: 16px;
+  }
+
+  &__sidebar {
+    padding-bottom: 30px;
+    border-radius: 20px;
+    background: var(--profile-sidebar-bg);
+    box-shadow: 0 20px 60px 10px var(--profile-sidebar-box-shadow);
+    overflow: hidden;
+    color: var(--text-color);
+  }
+
+  // User 
+  &-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 20px;
+    background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1A162E 100%), url("../img/profile/cover.png") no-repeat center / cover;
+    color: #fff;
+
+
+    &__avatar {
+      width: 121px;
+      height: 121px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0px 4px 14px 2px #00000014;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      background: #ccc content-box;
+    }
+
+    &__name {
+      margin-top: 15px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 26px;
+
+    }
+
+    &__desc {
+      margin-top: 2px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 22px;
+    }
+  }
+
+  // Menu 
+  &-menu {
+    margin-top: 30px;
+    padding: 0 30px;
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 26px;
+    }
+
+    &__list {
+      margin-top: 11px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 32px;
+      padding: 0 4px;
+      border-radius: 5px;
+
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 22px;
+
+      &:hover {
+        background: #ebebeb;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 100%;
+      filter: var(--icon-color);
+    }
+  }
+}

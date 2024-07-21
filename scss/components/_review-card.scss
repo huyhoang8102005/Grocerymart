@@ -1,0 +1,99 @@
+@use "../abstracts";
+
+.review-card {
+  padding: 30px;
+  border-radius: 16px;
+  background: var(--review-card-bg);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include abstracts.breakpoint(lg) {
+    background: #FFF;
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+
+    @include abstracts.breakpoint(xl) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include abstracts.breakpoint(md) {
+      flex-direction: row;
+      text-align: initial;
+      align-items: initial;
+    }
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--text-color);
+  }
+
+  &__desc {
+    margin-top: 10px;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--text-color);
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: var(--text-color);
+
+    @include abstracts.breakpoint(xl) {
+      flex-direction: column;
+    }
+
+    @include abstracts.breakpoint(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include abstracts.breakpoint(md) {
+      gap: 5px;
+    }
+  }
+
+  &__star {
+    width: 22px;
+    height: 22px;
+  }
+
+  &__judge {
+    margin-left: 12px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    white-space: nowrap;
+
+    @include abstracts.breakpoint(md) {
+      margin-left: 10px;
+      font-size: 1.5rem;
+    }
+  }
+}

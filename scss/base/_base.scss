@@ -1,7 +1,15 @@
-* , ::before, ::after{
+@use "../abstracts";
+
+*,
+::before,
+::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -11,4 +19,60 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Gordita, sans-serif;
+  background-color: var(--body-bg);
+}
+
+a,
+img,
+button,
+input,
+textarea,
+select {
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  color: inherit;
+}
+
+input, textarea {
+  background: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 1s 9999s;
+  -webkit-text-fill-color: var(--text-color);
+  caret-color: var(--text-color);
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+.container {
+  @include abstracts.breakpoint(sm) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+.separate {
+  margin: var(--margin) 0;
+  height: 1px;
+  background: #d2d1d6;
 }

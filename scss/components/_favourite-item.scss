@@ -1,0 +1,47 @@
+@use "../abstracts";
+
+
+.favourite-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include abstracts.breakpoint(sm) {
+    align-items: flex-start;
+  }
+
+  &__thumb {
+    width: 110px;
+    object-fit: contain;
+
+    @include abstracts.breakpoint(lg) {
+      width: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--text-color);
+  }
+
+  &__content {
+    margin-top: 10px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+
+    @include abstracts.breakpoint(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__price {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--text-color);
+  }
+}

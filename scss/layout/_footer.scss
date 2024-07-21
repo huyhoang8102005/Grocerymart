@@ -1,0 +1,152 @@
+@use "../abstracts";
+
+.footer {
+  background: var(--footer-bg);
+
+  &__inner {
+    padding: 50px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.3fr 1fr;
+
+    @include abstracts.breakpoint(lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__row + &__row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+
+    @include abstracts.breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__heading {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--footer-text-color);
+
+    @include abstracts.breakpoint(lg) {
+      font-size: 2.0rem;
+    }
+  }
+
+  &__item {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--footer-item-color);
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+
+    @include abstracts.breakpoint(lg) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__contact {
+    row-gap: 30px;
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    &-heading {
+      font-weight: 600;
+    }
+
+    &-action {
+      color: var(--footer-item-color);
+    }
+
+    &-heading, &-desc {
+      color: var(--footer-text-color);
+
+      @include abstracts.breakpoint(lg) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-desc {
+      opacity: 0.5;
+    }
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    color: var(--footer-text-color);
+    opacity: 0.5;
+  }
+
+  &__input {
+    padding: 10px 4px;
+
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  
+  &__btn {
+    min-width: 120px;
+    background: var(--footer-btn-bg) !important;
+    color: #171C28;
+
+    @include abstracts.breakpoint(lg) {
+      height: 40px !important;
+      font-size: 1.4rem !important;
+      padding: 0 10px !important;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    @include abstracts.breakpoint(lg) {
+      flex-wrap: wrap;
+    }
+
+    &-icon {
+      width: 28px;
+      height: 28px;
+
+      @include abstracts.breakpoint(lg) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    filter: var(--icon-color);
+  }
+}

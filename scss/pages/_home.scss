@@ -1,0 +1,39 @@
+@use "../abstracts";
+
+.home {
+  margin-bottom: 50px;
+
+  &__container {
+    margin-top: 40px;
+
+    @include abstracts.breakpoint(md) {
+      margin-top: 30px;
+    }
+  }
+
+  &__heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--text-color);
+  }
+
+  &__cate {
+    --grid-gutter-x: 51px;
+
+    @include abstracts.breakpoint(xl) {
+      --grid-gutter-x: 30px;
+    }
+
+    @include abstracts.breakpoint(md) {
+      --grid-gutter-y: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+}

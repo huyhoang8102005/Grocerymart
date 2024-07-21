@@ -1,0 +1,285 @@
+@use "../abstracts";
+
+.product-page {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--product-detail-bg);
+    padding-bottom: 50px;
+}
+
+.product-container {
+  margin-top: 30px;
+
+  @include abstracts.breakpoint(md) {
+    margin-top: 20px;
+  }
+}
+
+.product-info-content {
+  @include abstracts.breakpoint(md) {
+    display: flex;
+    border-radius: 20px;
+    background: var(--product-detail-info-bg);
+  }
+}
+
+.product-preview {
+  padding: 0 30px;
+
+  @include abstracts.breakpoint(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  @include abstracts.breakpoint(md) {
+    padding: 16px;
+  }
+
+  &__list {
+    display: flex;
+    overflow: hidden;
+
+    @include abstracts.breakpoint(lg) {
+      flex: 1;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    padding-top: 92%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__thumbs {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include abstracts.breakpoint(lg) {
+      flex-direction: column;
+      padding-left: 0;
+    }
+
+    @include abstracts.breakpoint(md) {
+      display: none;
+    }
+  }
+
+  &__thumb-img {
+    width: 65px;
+    height: 65px;object-fit: contain;
+    border: 1.5px solid rgb(158, 157, 168, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 1;
+      border-color:  #9e9da8;
+    }
+
+    &--current {
+      opacity: 1;
+      border-color: #ffb700;
+    }
+  }
+}
+
+.product-info {
+  background: var(--product-detail-info-bg);
+  padding: 60px;
+
+  @include abstracts.breakpoint(xxl) {
+    padding: 40px;
+  }
+
+  @include abstracts.breakpoint(lg) {
+    margin-top: 30px;
+  }
+
+  @include abstracts.breakpoint(md) {
+    border-radius: 20px;
+    padding: 0 16px 16px;
+    margin-top: 0;
+  }
+
+  &__heading {
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 36px;
+    color: var(--text-color);
+  }
+
+  &__label {
+    margin-top: 30px;
+  }
+
+  &__card {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #b9babe;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__price {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 150%;
+    color: var(--text-color);
+  }
+
+  &__tax {
+    background: linear-gradient(0deg, #bad1b0, #b4d5a4);
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 20px;
+    color: #67B044;
+    padding: 2px 8px;
+    margin-left: 10px;
+  }
+
+  &__total-price {
+    margin: 20px 0;
+
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 36px;
+    color: var(--text-color);
+  }
+
+  &__add-to-cart {
+    flex: 1;
+  }
+
+  &__like-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 6px;
+    margin-left: 20px;
+    border: 1px solid #d2d1d6;
+    background: transparent;
+  }
+
+  &__tag {  
+    background: var(--product-info-tag-bg);
+  }
+}
+
+.product-properties {
+  padding-left: 30px;
+
+  @include abstracts.breakpoint(xxl) {
+    padding-left: 10px;
+  }
+
+  @include abstracts.breakpoint(lg) {
+    padding-left: 0;
+  }
+}
+
+.product-property {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+
+  @include abstracts.breakpoint(md) {
+    margin-top: 20px;
+  }
+
+  &__icon {
+    align-self: flex-start;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--text-color);
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text-color);
+  }
+}
+
+.product-tab {
+  &__list {
+    display: flex;
+    align-items: center;
+    margin-left: -30px;
+
+    @include abstracts.breakpoint(md) {
+      margin-left: -20px;
+      overflow-y: auto;
+    }
+  }
+
+  &__item {
+    padding: 0 30px;
+
+    color: #9E9DA8;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 32px;
+    user-select: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+
+    @include abstracts.breakpoint(md) {
+      padding: 8px 20px;
+      font-size: 1.8rem;
+    }
+
+    &--current {
+      color: var(--product-tab-item-current-color);
+    }
+  }
+
+  &__contents {
+    padding-top: 30px;
+  }
+
+  &__content {
+    display: none;
+
+    &--current {
+      display: block;
+    }
+  }
+}
+
+.product-content {
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 34px;
+    margin-bottom: 30px;
+
+    color: var(--text-color);
+  }
+}

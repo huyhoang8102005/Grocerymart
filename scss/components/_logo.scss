@@ -1,0 +1,16 @@
+@use "../abstracts";
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &__title {
+    color: var(--text-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 32px;
+    transform: translateY(-3px);
+  }
+}
+

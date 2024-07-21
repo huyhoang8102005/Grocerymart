@@ -1,0 +1,204 @@
+@use "../abstracts";
+
+.filter-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.filter {
+  position: absolute;
+  right: 0;
+  top: 55px;
+
+  padding: 30px 0;
+  background-color: var(--filter-bg);
+  filter: drop-shadow(0px 40px 90px 20px #c8c8c866);
+  border-radius: 20px;
+  transition: all 0.3s;
+
+  @include abstracts.breakpoint(sm) {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    border-radius: 0;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__arrow {
+    position: absolute;
+    height: 20.5px;
+    top: -15px;
+    right: 24px;
+    filter: var(--filter-arrow-bg);
+  }
+
+  &__heading {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--text-color);
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    &-group {
+      margin-top: 20px;
+
+      &--inline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    &-slider {
+      position: relative;
+
+      width: 100%;
+      height: 2px;
+      background: #d2d1d6;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        top: 50%;
+        translate: 0 -50%;
+        border-radius: 50%;
+        border: 6px solid #ffb700;
+        background-color: #fff;
+      }
+
+      &::before {
+        left: var(--min-value);
+      }
+
+      &::after {
+        left: var(--max-value);
+      }
+    }
+
+    &-text-input {
+      border-radius: 6px;
+      border: 1px solid #d2d1d6;
+    }
+
+    &-text-input {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      width: 334px;
+      height: 44px;
+
+      padding: 0 16px;
+
+      @include abstracts.breakpoint(sm) {
+        width: 100%;
+      }
+
+      &--small {
+        margin-top: 12px;
+        width: 121px;
+        height: 36px;
+        padding: 0 12px;
+      }
+    }
+
+    &-input {
+      width: 100%;
+
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 146.667%;
+      background-color: transparent;
+      color: var(--text-color);
+
+      &::placeholder {
+        color: #9e9da8;
+        font-weight: 400;
+      }
+    }
+
+    &-input-icon {
+      margin-left: 12px;
+      filter: var(--icon-color);
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex: 1;
+  }
+
+  &__separate {
+    width: 1px;
+    margin: 0 30px;
+    background: #eee;
+
+    @include abstracts.breakpoint(xl) {
+      width: 100%;
+      height: 1px;
+      margin: 30px 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 32px;
+
+    @include abstracts.breakpoint(sm) {
+      position: sticky;
+      bottom: 0;
+      background-color: var(--filter-bg);
+    }
+  }
+
+  &__cancel, &__submit {
+    height: 38px;
+    padding: 0 10px;
+
+    @include abstracts.breakpoint(sm) {
+      flex: 1;
+      height: 44px;
+    }
+  }
+
+  &__cancel {
+    font-size: 1.5rem;
+  }
+
+  &__submit {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  &__heading, &__content, &__footer {
+    padding: 0 30px;
+  }
+
+  &__content {
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    @include abstracts.breakpoint(xl) {
+      flex-direction: column;
+    }
+
+    @include abstracts.breakpoint(sm) {
+      max-height: calc(100vh - 230px);
+      padding-bottom: 50px;
+    }
+  }
+}

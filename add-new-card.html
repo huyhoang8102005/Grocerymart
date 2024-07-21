@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Card | Grocerymart</title>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="./assets/font/stylesheet.css" />
+    <!-- Styles.css  -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <!-- JavaScript  -->
+    <script src="./assets/js/script.js"></script>
+  </head>
+  <body>
+    <!-- Header  -->
+    <header id="header" class="header"></header>
+    <script>
+      load("#header", "./templates/header-logined.html");
+    </script>
+    <!-- Main  -->
+    <main class="profile">
+      <div class="container">
+        <!-- Search bar  -->
+        <div class="profile-container">
+          <div class="search-bar d-none d-md-flex">
+            <input
+              type="text"
+              name=""
+              placeholder="Search for item"
+              id=""
+              class="search-bar__input"
+            />
+            <button class="search-bar__submit">
+              <img
+                src="./assets/icons/search.svg"
+                alt=""
+                class="search-bar__icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Profile content  -->
+        <div class="profile-container">
+          <div class="row">
+            <div class="col-3 col-xl-4 d-lg-none">
+              <aside class="profile__sidebar">
+                <!-- User  -->
+                <div class="profile-user">
+                  <img
+                    src="./assets/img/avatar/avatar-3.png"
+                    alt=""
+                    class="profile-user__avatar"
+                  />
+                  <h1 class="profile-user__name">Imran Khan</h1>
+                  <p class="profile-user__desc">Registered: 17th May 2022</p>
+                </div>
+
+                <!-- Menu 1  -->
+                <div class="profile-menu">
+                  <h3 class="profile-menu__title">Manage Account</h3>
+                  <ul class="profile-menu__list">
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/bag.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Personal info
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/address.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Addresses
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/mail.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Communications & privacy
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Menu 2  -->
+                <div class="profile-menu">
+                  <h3 class="profile-menu__title">My items</h3>
+                  <ul class="profile-menu__list">
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/reorder.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Reorder
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/favourite-2.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Lists
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/gift-2.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Registries
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Menu 3  -->
+                <div class="profile-menu">
+                  <h3 class="profile-menu__title">Subscriptions & plans</h3>
+                  <ul class="profile-menu__list">
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/security.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Protection plans
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Menu 4  -->
+                <div class="profile-menu">
+                  <h3 class="profile-menu__title">Customer Service</h3>
+                  <ul class="profile-menu__list">
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/help.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Help
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="" class="profile-menu__link">
+                        <span class="profile-menu__icon">
+                          <img
+                            src="./assets/icons/help-2.svg"
+                            alt=""
+                            class="icon"
+                          />
+                        </span>
+                        Terms of Use
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+            <div class="col-9 col-xl-8 col-lg-12">
+              <div class="cart-info">
+                <div class="row gy-3">
+                  <div class="col-12">
+                    <h2 class="cart-info__heading">
+                      <a href="./profile.html">
+                        <img
+                          src="./assets/icons/arrow-left.svg"
+                          alt=""
+                          class="cart-info__back-arrow"
+                        />
+                      </a>
+                      Add credit or debit card
+                    </h2>
+                    <!-- Form 1  -->
+                    <form action="./profile.html" class="form form-card">
+                      <div class="form__row">
+                        <div class="form__group">
+                          <label
+                            for="first-name"
+                            class="form__label form__label--medium"
+                            >First Name</label
+                          >
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="first-name"
+                              class="form__input"
+                              placeholder="First Name"
+                              required
+                              minlength="6"
+                              autofocus
+                            />
+                            <img
+                              src="./assets/icons/form-error.svg"
+                              alt=""
+                              class="form__input-icon-error"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Mật khẩu tối thiểu có 6 kí tự
+                          </p>
+                        </div>
+
+                        <div class="form__group">
+                          <label
+                            for="last-name"
+                            class="form__label form__label--medium"
+                            >Last Name</label
+                          >
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="last-name"
+                              class="form__input"
+                              placeholder="Last Name"
+                              required
+                              minlength="6"
+                            />
+                            <img
+                              src="./assets/icons/form-error.svg"
+                              alt=""
+                              class="form__input-icon-error"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Mật khẩu tối thiểu có 6 kí tự
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Form 2  -->
+                      <div class="form__row">
+                        <div class="form__group">
+                          <label
+                            for="card-number"
+                            class="form__label form__label--medium"
+                            >Card Information</label
+                          >
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="card-number"
+                              class="form__input"
+                              placeholder="Card Number"
+                              required
+                              minlength="17"
+                            />
+                            <img
+                              src="./assets/icons/form-error.svg"
+                              alt=""
+                              class="form__input-icon-error"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Card number have at least 17 characters
+                          </p>
+                        </div>
+
+                        <div class="form__group">
+                          <label
+                            for="expiration-date"
+                            class="form__label form__label--medium"
+                            >Expiration Date</label
+                          >
+                          <div class="form__text-input">
+                            <input
+                              type="number"
+                              name=""
+                              id="expiration-date"
+                              class="form__input"
+                              placeholder="MM/YY"
+                              required
+                            />
+                            <img
+                              src="./assets/icons/form-error.svg"
+                              alt=""
+                              class="form__input-icon-error"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Please enter the Expiration Date
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- Form 3  -->
+                      <div class="form__row">
+                        <div class="form__group">
+                          <label
+                            for="cvv"
+                            class="form__label form__label--medium"
+                            >CVV</label
+                          >
+                          <div class="form__text-input">
+                            <input
+                              type="number"
+                              name=""
+                              id="cvv"
+                              class="form__input"
+                              placeholder="Card Number"
+                              required
+                              minlength="3"
+                            />
+                            <img
+                              src="./assets/icons/form-error.svg"
+                              alt=""
+                              class="form__input-icon-error"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Card number have at least 3 characters
+                          </p>
+                        </div>
+
+                        <div class="form__group">
+                          <label
+                            for="phone"
+                            class="form__label form__label--medium"
+                            >Phone Number</label
+                          >
+                          <div class="form__text-input">
+                            <input
+                              type="text"
+                              name=""
+                              id="phone"
+                              class="form__input"
+                              placeholder="Last Name"
+                              required
+                              minlength="10"
+                            />
+                            <img
+                              src="./assets/icons/form-error.svg"
+                              alt=""
+                              class="form__input-icon-error"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Card number have at least 10 characters
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="form__group">
+                        <label
+                          for="set-card"
+                          class="form__label form__label--medium"
+                        >
+                          Phone Number
+                        </label>
+                        <label class="form__checkbox">
+                          <input
+                            type="checkbox"
+                            name=""
+                            id="set-card"
+                            class="form__checkbox-input"
+                            checked
+                          />
+                          <span class="form__checkbox-label"
+                            >Set as default card</span
+                          >
+                        </label>
+                      </div>
+
+                      <div class="form-card__bottom">
+                        <a href="./profile.html" class="btn btn--text">Cancel</a>
+                        <button class="btn btn--primary btn--rounded">
+                          Save Card
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer  -->
+    <footer id="footer" class="footer"></footer>
+    <script>
+      load("#footer", "./templates/footer.html");
+    </script>
+
+    <!-- Modal: confirm delete item  -->
+    <div class="modal modal--small hide" id="delete-confirm">
+      <div class="modal__content">
+        <div class="modal__text">Are you sure to delete the card ?</div>
+        <div class="modal__bottom">
+          <button
+            class="btn btn--text modal__btn js-toggle"
+            toggle-target="#delete-confirm"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn--primary btn--danger modal__btn btn--no-margin js-toggle"
+            toggle-target="#delete-confirm"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <div
+        class="modal__overlay js-toggle"
+        toggle-target="#delete-confirm"
+      ></div>
+    </div>
+  </body>
+</html>
