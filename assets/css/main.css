@@ -2734,7 +2734,7 @@ b, strong {
   }
 }
 
-.form:has(:invalid) .auth__btn {
+.form:has(.form__invalid) .auth__btn {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -2775,15 +2775,15 @@ b, strong {
     margin-top: 20px;
   }
 }
-.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
+.form__invalid .form__text-input {
   border: 1.5px solid red;
   background: rgba(255, 0, 0, 0.05);
 }
-.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error, .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon-error {
-  display: block;
-}
-.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon {
+.form__invalid .form__input-icon {
   display: none;
+}
+.form__invalid .form__input-icon-error {
+  display: block;
 }
 .form__text-area, .form__text-input {
   display: flex;
@@ -2853,9 +2853,9 @@ b, strong {
   margin-left: 12px;
 }
 .form__input-icon-error {
-  display: none;
   margin-left: 12px;
   animation: shake 0.6s;
+  display: none;
 }
 .form__error {
   text-align: left;
@@ -2863,7 +2863,6 @@ b, strong {
   font-weight: 500;
   margin-top: 10px;
   color: red;
-  display: none;
 }
 .form__pull-right {
   margin-left: auto;

@@ -1,7 +1,7 @@
 @use "../abstracts";
 
 .form {
-  &:has(:invalid) .auth__btn {
+  &:has(&__invalid) .auth__btn {
     opacity: 0.5;
     pointer-events: none;
   }
@@ -46,18 +46,18 @@
     }
   }
 
-  &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+  &__invalid {
     .form__text-input {
       border: 1.5px solid red;
       background: rgba($color: red, $alpha: 0.05);
     }
 
-    .form__error, .form__input-icon-error {
-      display: block;
-    }
-
     .form__input-icon {
       display: none;
+    }
+
+    .form__input-icon-error {
+      display: block;
     }
   }
 
@@ -141,9 +141,9 @@
     }
 
     &-icon-error {
-      display: none;
       margin-left: 12px;
       animation: shake 0.6s;
+      display: none;
     }
   }
 
@@ -153,7 +153,6 @@
     font-weight: 500;
     margin-top: 10px;
     color: red;
-    display: none;
   }
 
   

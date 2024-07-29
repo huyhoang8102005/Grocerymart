@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <!-- JavaScript  -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/validator.js"></script>
   </head>
   <body>
     <main class="auth">
@@ -62,37 +63,86 @@
             <h2 class="logo__title">grocerymart</h2>
           </a>
           <h1 class="auth__heading">Hello Again!</h1>
-          <p class="auth__desc"> Welcome back to sign in. As a returning customer, you have access to your previously saved all information.</p>
-          <form action="./index-logined.html" class="form auth__form">
+          <p class="auth__desc">
+            Welcome back to sign in. As a returning customer, you have access to
+            your previously saved all information.
+          </p>
+          <form
+            action="./index-logined.html"
+            class="form auth__form"
+            id="form-sign-in"
+          >
             <div class="form__group">
-                <div class="form__text-input">
-                    <input type="email" name="" id="" class="form__input" placeholder="Email" required>
-                    <img src="./assets/icons/message.svg" alt="" class="form__input-icon">
-                    <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error">
-                </div>
-                <p class="form__error">Email chưa đúng định dạng</p>
+              <div class="form__text-input">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form__input"
+                  placeholder="Email"
+                  autocomplete="current-password"
+                />
+                <img
+                  src="./assets/icons/message.svg"
+                  alt=""
+                  class="form__input-icon"
+                />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input-icon-error"
+                />
+              </div>
+              <p class="form__error"></p>
             </div>
             <div class="form__group">
-                <div class="form__text-input">
-                    <input type="password" name="" id="" class="form__input" placeholder="Password" required minlength="6">
-                    <img src="./assets/icons/lock.svg" alt="" class="form__input-icon">
-                    <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error">
-                </div>
-                <p class="form__error">Mật khẩu tối thiểu có 6 kí tự</p>
+              <div class="form__text-input">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form__input"
+                  placeholder="Password"
+                  autocomplete="current-password"
+                />
+                <img
+                  src="./assets/icons/lock.svg"
+                  alt=""
+                  class="form__input-icon"
+                />
+                <img
+                  src="./assets/icons/form-error.svg"
+                  alt=""
+                  class="form__input-icon-error"
+                />
+              </div>
+              <p class="form__error"></p>
             </div>
             <div class="form__group form__group--inline">
-                <label class="form__checkbox">
-                    <input type="checkbox" name="" id="" class="form__checkbox-input">
-                    <span class="form__checkbox-label">Set as default card</span>
-                </label>
-                <a href="./reset-password.html" class="auth__link form__pull-right">Forgot Password</a>
+              <label class="form__checkbox">
+                <input
+                  type="checkbox"
+                  id=""
+                  class="form__checkbox-input"
+                />
+                <span class="form__checkbox-label">Set as default card</span>
+              </label>
+              <a
+                href="./reset-password.html"
+                class="auth__link form__pull-right"
+                >Forgot Password</a
+              >
             </div>
             <div class="form__group auth__btn-group">
-                <button class="btn btn--primary auth__btn">Sign In</button>
-                <button class="btn btn--outline auth__btn btn--no-margin">
-                    <img src="./assets/icons/google.svg" alt="" class="auth__icon">
-                    Sign in with Google
-                </button>
+              <button class="btn btn--primary auth__btn">Sign In</button>
+              <button class="btn btn--outline auth__btn btn--no-margin">
+                <img
+                  src="./assets/icons/google.svg"
+                  alt=""
+                  class="auth__icon"
+                />
+                Sign in with Google
+              </button>
             </div>
           </form>
           <p class="auth__text">
@@ -103,7 +153,22 @@
       </div>
     </main>
     <script>
-        window.dispatchEvent(new Event("template-loaded"));
+      window.dispatchEvent(new Event("template-loaded"));
+      Validator({
+        form: "#form-sign-in",
+        formGroupSelector: ".form__group",
+        addErrorElementInvalid: "form__invalid",
+        errorElementMessage: ".form__error",
+        rules: [
+          Validator.isRequired("#email"), 
+          Validator.isEmail("#email"), 
+          Validator.isRequired("#password"), 
+          Validator.Password("#password")],
+          <!-- API  -->
+          onSubmit: function(data) {
+            console.log(data);
+          },
+      });
     </script>
   </body>
 </html>

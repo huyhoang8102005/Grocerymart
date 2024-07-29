@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <!-- JavaScript  -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/validator.js"></script>
   </head>
   <body>
     <main class="auth">
@@ -75,34 +76,34 @@
           </a>
           <h1 class="auth__heading">Sign Up</h1>
           <p class="auth__desc">Let’s create your account and  Shop like a pro and save money.</p>
-          <form action="./index-logined.html" class="form auth__form">
+          <form action="./index-logined.html" id="form-sign-up" class="form auth__form">
             <div class="form__group">
                 <div class="form__text-input">
-                    <input type="email" name="" id="" class="form__input" placeholder="Email" required>
+                    <input type="email" name="email" id="email" class="form__input" placeholder="Email">
                     <img src="./assets/icons/message.svg" alt="" class="form__input-icon">
                     <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error">
                 </div>
-                <p class="form__error">Email chưa đúng định dạng</p>
+                <p class="form__error"></p>
             </div>
             <div class="form__group">
                 <div class="form__text-input">
-                    <input type="password" name="" id="" class="form__input" placeholder="Password" required minlength="6">
+                    <input type="password" name="password" id="password" class="form__input" placeholder="Password">
                     <img src="./assets/icons/lock.svg" alt="" class="form__input-icon">
                     <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error">
                 </div>
-                <p class="form__error">Mật khẩu tối thiểu có 6 kí tự</p>
+                <p class="form__error"></p>
             </div>
             <div class="form__group">
                 <div class="form__text-input">
-                    <input type="password" name="" id="" class="form__input" placeholder="Confirm Password" required minlength="6">
+                    <input type="password" name="confirm-password" id="confirm-password" class="form__input" placeholder="Confirm Password">
                     <img src="./assets/icons/lock.svg" alt="" class="form__input-icon">
                     <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error">
                 </div>
-                <p class="form__error">Mật khẩu không khớp</p>
+                <p class="form__error"></p>
             </div>
             <div class="form__group form__group--inline">
                 <label class="form__checkbox">
-                    <input type="checkbox" name="" id="" class="form__checkbox-input">
+                    <input type="checkbox" id="" class="form__checkbox-input">
                     <span class="form__checkbox-label">Set as default card</span>
                 </label>
                 <a href="./reset-password.html" class="auth__link form__pull-right">Forgot Password</a>
@@ -124,6 +125,25 @@
     </main>
     <script>
         window.dispatchEvent(new Event("template-loaded"));
+        Validator({
+          form: "#form-sign-up",
+          formGroupSelector: ".form__group",
+          addErrorElementInvalid: "form__invalid",
+          errorElementMessage: ".form__error",
+          rules: [
+            Validator.isRequired("#email"), 
+            Validator.isEmail("#email"), 
+            Validator.isRequired("#password"), 
+            Validator.Password("#password"),
+            Validator.isRequired("#confirm-password"),
+            Validator.confirmPassword("#confirm-password", function() {
+              return document.querySelector("#form-sign-up #password").value;
+            })],
+            <!-- API  -->
+            onSubmit: function(data) {
+              console.log(data);
+            },
+        });
     </script>
   </body>
 </html>
